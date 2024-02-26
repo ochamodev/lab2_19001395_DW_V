@@ -156,3 +156,5 @@ COMMIT ;
 -- 1. Considerando las reglas de normalización, ¿Qué mejoras podría realizar en las tablas?
 
 -- 2. ¿Qué registro de empleado falla y por qué? ¿Cómo se corrige?
+
+-- 3. Obtener los apellidos del empleado
