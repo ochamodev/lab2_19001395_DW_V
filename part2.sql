@@ -40,44 +40,6 @@ CREATE TABLE EMPLEADO (
  CHECK ( TELEFONO REGEXP '^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-[[:space:]]\./0-9]*$' )
  );
 
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, EMAIL, TELEFONO, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (6, 'INES', 'FERNANDEZ SANCHEZ', 'fsanches!@gmail.com','+50255552612a',
-'PRESIDENTE', NULL, '1991-11-17', 5000, NULL, 1);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (4, 'ESTHER', 'PEÑA MATA', '+34937377761','epena@gmail.com','DIRECTOR',
-6,str_to_date('01/05/1991', '%d/%m/%Y'), 2850, NULL, 3);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (5, 'DANIEL', 'LOPEZ LEON', '+34937377780','dlopez@gmail.com','DIRECTOR',
-6,str_to_date('09/06/1991', '%d/%m/%Y'), 2450, NULL, 1);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (1, 'CARLOS', 'ALONSO GARCIA',
-'34937377770','carlos.alonso@gmail.com','COMERCIAL', 4,
-str_to_date('20/02/1991', '%d/%m/%Y'), 1600, 30, 3);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (2, 'ANDRES', 'GOMEZ SEGUNDO', '+(34) 937-376-525',
-'andres.gomez@gmail.com', 'COMERCIAL', 4, str_to_date('22/02/1991', '%d/%m/%Y'),
-1250, 50, 3);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (3, 'ANA', 'HERRANZ CIFUENTES', '+34937376523','herranz.ana@gmail.com',
-'COMERCIAL', 4,str_to_date('28/09/1991', '%d/%m/%Y'), 1250, 140, 3);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (7, 'TOMAS', 'CALLEJA ARCAZ','+34937376541','tomas.calleja@gmail.com',
-'COMERCIAL', 4, str_to_date( '08/09/1991', '%d/%m/%Y'), 1500, 0, 3);
-COMMIT ;
-
 INSERT INTO DEPARTAMENTO (ID, NOMBRE, LOCALIDAD)
 VALUES (1, 'INFORMATICA', 'BILBAO');
 
@@ -109,29 +71,11 @@ VALUES (5, 3001, 9999);
 
 COMMIT ;
 
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, EMAIL, TELEFONO, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (6, 'INES', 'FERNANDEZ SANCHEZ', 'fsanchez!@gmail.com','+50255552612a',
-'PRESIDENTE', NULL, '1991-11-17', 5000, NULL, 1);
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (4, 'ESTHER', 'PEÑA MATA', '+34937377761','epena@gmail.com','DIRECTOR',
-6,str_to_date('01/05/1991', '%d/%m/%Y'), 2850, NULL, 3);
-
-
-INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
-FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
-VALUES (5, 'DANIEL', 'LOPEZ LEON', '+34937377780','dlopez@gmail.com','DIRECTOR',
-6,str_to_date('09/06/1991', '%d/%m/%Y'), 2450, NULL, 1);
-
-
 INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
 FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
 VALUES (1, 'CARLOS', 'ALONSO GARCIA',
 '34937377770','carlos.alonso@gmail.com','COMERCIAL', 4,
 str_to_date('20/02/1991', '%d/%m/%Y'), 1600, 30, 3);
-
 
 INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
 FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
@@ -145,6 +89,22 @@ FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
 VALUES (3, 'ANA', 'HERRANZ CIFUENTES', '+34937376523','herranz.ana@gmail.com',
 'COMERCIAL', 4,str_to_date('28/09/1991', '%d/%m/%Y'), 1250, 140, 3);
 
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (4, 'ESTHER', 'PEÑA MATA', '+34937377761','epena@gmail.com','DIRECTOR',
+6,str_to_date('01/05/1991', '%d/%m/%Y'), 2850, NULL, 3);
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (5, 'DANIEL', 'LOPEZ LEON', '+34937377780','dlopez@gmail.com','DIRECTOR',
+6,str_to_date('09/06/1991', '%d/%m/%Y'), 2450, NULL, 1);
+
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, EMAIL, TELEFONO, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (6, 'INES', 'FERNANDEZ SANCHEZ', 'fsanches@gmail.com','+50255552612',
+'PRESIDENTE', NULL, '1991-11-17', 5000, NULL, 1);
+
 
 INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
 FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
@@ -152,9 +112,133 @@ VALUES (7, 'TOMAS', 'CALLEJA ARCAZ','+34937376541','tomas.calleja@gmail.com',
 'COMERCIAL', 4, str_to_date( '08/09/1991', '%d/%m/%Y'), 1500, 0, 3);
 COMMIT ;
 
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, EMAIL, TELEFONO, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (8, 'INES', 'FERNANDEZ SANCHEZ', 'fsanchez@gmail.com','+50255552612',
+'PRESIDENTE', NULL, '1991-11-17', 5000, NULL, 1);
 
--- 1. Considerando las reglas de normalización, ¿Qué mejoras podría realizar en las tablas?
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (9, 'ESTHER', 'PEÑA MATA', '+34937377761','epena@gmail.com','DIRECTOR',
+6,str_to_date('01/05/1991', '%d/%m/%Y'), 2850, NULL, 3);
 
--- 2. ¿Qué registro de empleado falla y por qué? ¿Cómo se corrige?
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (10, 'DANIEL', 'LOPEZ LEON', '+34937377780','dlopez@gmail.com','DIRECTOR',
+6,str_to_date('09/06/1991', '%d/%m/%Y'), 2450, NULL, 1);
+
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (11, 'CARLOS', 'ALONSO GARCIA',
+'34937377770','carlos.alonso@gmail.com','COMERCIAL', 4,
+str_to_date('20/02/1991', '%d/%m/%Y'), 1600, 30, 3);
+
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (12, 'ANDRES', 'GOMEZ SEGUNDO', '+(34) 937-376-525',
+'andres.gomez@gmail.com', 'COMERCIAL', 4, str_to_date('22/02/1991', '%d/%m/%Y'),
+1250, 50, 3);
+
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (13, 'ANA', 'HERRANZ CIFUENTES', '+34937376523','herranz.ana@gmail.com',
+'COMERCIAL', 4,str_to_date('28/09/1991', '%d/%m/%Y'), 1250, 140, 3);
+
+
+INSERT INTO EMPLEADO (ID, NOMBRE, APELLIDOS, TELEFONO, EMAIL, CARGO, JEFE_ID,
+FECHA_ALTA, SUELDO, COMISION, DEPARTAMENTO_ID)
+VALUES (17, 'TOMAS', 'CALLEJA ARCAZ','+34937376541','tomas.calleja@gmail.com',
+'COMERCIAL', 4, str_to_date( '08/09/1991', '%d/%m/%Y'), 1500, 0, 3);
+COMMIT ;
+
+
+
+/*
+1. Considerando las reglas de normalización, ¿Qué mejoras podría realizar en las tablas?
+
+
+2. ¿Qué registro de empleado falla y por qué? ¿Cómo se corrige?
+Para empleado fallan los registros con email fsanches!@gmail.com y fsanchez!@gmail.com, ya que contienen un signo de exclamación !,
+lo cual no cumple con el formato definido en la expresión regular para poder ingresar un correo, también tiene en el número de telefono
+el caracter a lo cual no cumple con el formato de la expresión regular definido en la restricción, se encontraron registros con IDs que ya existian,
+se procedio a corregirlos.
+
+*/
+
 
 -- 3. Obtener los apellidos del empleado
+    SELECT APELLIDOS FROM EMPLEADO;
+
+-- 4. Obtener los apellidos del empleado sin repetición 
+    SELECT DISTINCT APELLIDOS FROM EMPLEADO;
+-- 5. Obtener todos los datos de los empleados apellidados López
+    SELECT * FROM EMPLEADO
+        WHERE APELLIDOS LIKE '%lopez%';
+-- 6. Obtener todos los datos del empleado con apellido López o Peña 
+    SELECT * FROM EMPLEADO
+        WHERE APELLIDOS LIKE '%lopez%' OR APELLIDOS LIKE '%Peña%';
+
+-- 7. Obtener los datos del empleado que trabaja en el departamento de informática.
+    SELECT * FROM EMPLEADO
+        WHERE DEPARTAMENTO_ID = 1;
+
+-- 8. Obtener los datos del empleado cuyo nombre comience por I 
+    SELECT * FROM EMPLEADO
+        WHERE NOMBRE LIKE 'I%';
+-- 9. Obtener el nombre del departamento y el número de empleados que tiene.
+    SELECT D.Nombre, COUNT(E.ID) AS 'Departamento' FROM EMPLEADO AS E
+        INNER JOIN DEPARTAMENTO AS D ON E.DEPARTAMENTO_ID = D.ID
+        GROUP BY E.DEPARTAMENTO_ID;
+
+-- 10.  Consultar los diferentes cargos desempeñados en la empresa.
+    SELECT DISTINCT CARGO FROM EMPLEADO;
+-- 11.  Listar los empleados como sigue: LOPEZ PEREZ, CARLOS: es PRESIDENTE
+    SELECT CONCAT(APELLIDOS, ", ", NOMBRE, ": es ", CARGO) AS 'INFO_EMPLEADO' FROM EMPLEADO;
+-- 12.  Mostrar el nombre, apellidos, sueldo y comisión del empleado que tiene jefe, y su 
+-- comisión es superior a 150 €. 
+    SELECT NOMBRE, APELLIDOS, SUELDO, COMISION FROM EMPLEADO
+	    WHERE JEFE_ID IS NOT NULL AND COMISION > 150;
+-- 13.  Obtener los empleados que no ejercen de comercial y cuyos nombres contienen la letra N.
+    SELECT * FROM EMPLEADO
+        WHERE CARGO NOT LIKE '%comercial%' AND NOMBRE LIKE '%N%';
+-- 14.  De los empleados que tienen comisión, obtener el nombre, sueldo y comisión, ordenados 
+-- por sueldo de mayor a menor.
+    SELECT NOMBRE, SUELDO, COMISION FROM EMPLEADO
+        WHERE COMISION IS NOT NULL
+        ORDER BY SUELDO DESC;
+-- 15.  Ordenar a los empleados por sus apellidos y nombres.
+    SELECT * FROM EMPLEADO
+    ORDER BY APELLIDOS, NOMBRE;
+-- 16.  Obtener el nombre, sueldo anual y fecha de alta de los empleados que no tienen 
+-- comisión, ordenados por fecha de alta en la empresa. 
+    SELECT NOMBRE, (SUELDO * 12) AS 'Sueldo Anual', FECHA_ALTA FROM EMPLEADO
+        WHERE COMISION IS NOT NULL
+        ORDER BY FECHA_ALTA;
+-- 17.  Mostrar el nombre y sueldo de los empleados incrementados en un 10% y ordenados por 
+-- nombre y apellidos. 
+    SELECT NOMBRE, (SUELDO + (SUELDO * 0.10)) AS 'Incremento 10%' FROM EMPLEADO
+        ORDER BY NOMBRE, APELLIDOS;
+-- 18.  Mostrar el nombre y fecha de alta de cada empleado, ordenado por fecha de entrada 
+-- como sigue: Fecha de entrada (como título) Ejemplo: ‘Carlos Alonso García empezó a 
+-- trabajar el 20 de febrero de 1991’ 
+    SET lc_time_names = 'es_ES';
+    SELECT CONCAT(NOMBRE, ' ', APELLIDOS, ' empezó a trabajar el ', DAYOFMONTH(FECHA_ALTA), ' de ', MONTHNAME(FECHA_ALTA), ' de ', YEAR(FECHA_ALTA)) AS 'Datos'
+        FROM EMPLEADO ORDER BY FECHA_ALTA;
+-- 19.  Obtener el nombre de los comerciales, la comisión, el sueldo mensual y el sueldo 
+-- incrementado como sigue: si la comisión es menor que 50 €, aumentar un 25%; y si es 
+-- igual o superior, aumentar un 12%. 
+    SELECT NOMBRE, COMISION, SUELDO
+-- 20.  Mostrar la localidad, nombre y sueldo del empleado cuyo grado es 2 o 3. 
+-- 21.  Mostrar el nombre de los departamentos cuyos empleados tienen comisión o su sueldo 
+-- anual es superior a 18.000 €. 
+-- 22.  Calcular el número de empleados del departamento de VENTAS. 
+-- 23.  Calcular la comisión media de los empleados, excluyendo al presidente y suponiendo que 
+-- todos los empleados cobran al menos una comisión de o €. 
+-- 24.  Calcular el sueldo máximo de los empleados de cada departamento siempre que el 
+-- mínimo sueldo del departamento sea superior a 780 €. 
+-- 25.  Mostrar el nombre y fecha de entrada de todos los empleados que trabajan en el mismo 
+-- departamento que ESTHER. 26.  Calcular el número de empleados que están en BILBAO 
