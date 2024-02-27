@@ -231,14 +231,47 @@ se procedio a corregirlos.
 -- 19.  Obtener el nombre de los comerciales, la comisión, el sueldo mensual y el sueldo 
 -- incrementado como sigue: si la comisión es menor que 50 €, aumentar un 25%; y si es 
 -- igual o superior, aumentar un 12%. 
-    SELECT NOMBRE, COMISION, SUELDO
+    SELECT NOMBRE, COMISION, SUELDO,
+        (CASE 
+            WHEN COMISION < 50 THEN COMISION + (COMISION * 0.25)
+            ELSE COMISION + (COMISION + 0.12)
+        END) AS 'SUELDO_INCREMENTADO'
+    FROM EMPLEADO
+    WHERE CARGO LIKE 'comercial'
 -- 20.  Mostrar la localidad, nombre y sueldo del empleado cuyo grado es 2 o 3. 
+    SELECT D.LOCALIDAD, E.NOMBRE, E.SUELDO, RS.GRADO FROM EMPLEADO AS E
+        INNER JOIN DEPARTAMENTO AS D ON E.DEPARTAMENTO_ID = D.ID
+        INNER JOIN RANGO_SUELDO AS RS
+        WHERE E.SUELDO BETWEEN RS.SUELDO_MIN AND RS.SUELDO_MAX
+        AND GRADO IN (2, 3);
+
 -- 21.  Mostrar el nombre de los departamentos cuyos empleados tienen comisión o su sueldo 
 -- anual es superior a 18.000 €. 
+    SELECT D.NOMBRE FROM DEPARTAMENTO AS D
+        INNER JOIN EMPLEADO AS E ON D.ID = E.DEPARTAMENTO_ID
+        WHERE E.COMISION IS NOT NULL OR (E.SUELDO * 12) > 18000
+
 -- 22.  Calcular el número de empleados del departamento de VENTAS. 
+    SELECT COUNT(ID) AS 'NUM EMPLEADOS' FROM EMPLEADO
+        WHERE DEPARTAMENTO_ID = 3;
 -- 23.  Calcular la comisión media de los empleados, excluyendo al presidente y suponiendo que 
 -- todos los empleados cobran al menos una comisión de o €. 
+    SELECT AVG(COMISION) FROM EMPLEADO
+        WHERE CARGO NOT LIKE 'presidente';
 -- 24.  Calcular el sueldo máximo de los empleados de cada departamento siempre que el 
 -- mínimo sueldo del departamento sea superior a 780 €. 
+    SELECT MAX(E.SUELDO) AS 'MAX SUELDO', D.NOMBRE FROM EMPLEADO AS E
+        INNER JOIN DEPARTAMENTO AS D ON D.ID = E.DEPARTAMENTO_ID
+        GROUP BY DEPARTAMENTO_ID
+        HAVING MIN(E.SUELDO) > 780;
 -- 25.  Mostrar el nombre y fecha de entrada de todos los empleados que trabajan en el mismo 
--- departamento que ESTHER. 26.  Calcular el número de empleados que están en BILBAO 
+-- departamento que ESTHER. 
+    SELECT E.NOMBRE, E.FECHA_ALTA FROM EMPLEADO AS E
+        WHERE E.DEPARTAMENTO_ID = 3;
+-- 26.  Calcular el número de empleados que están en BILBAO 
+    SELECT COUNT(E.ID) AS 'EMPLEADOS EN BILBAO' FROM EMPLEADO AS E
+        INNER JOIN DEPARTAMENTO AS D
+        ON D.ID = E.DEPARTAMENTO_ID
+        WHERE LOCALIDAD LIKE 'BILBAO'
+    
+
