@@ -160,6 +160,34 @@ COMMIT ;
 /*
 1. Considerando las reglas de normalización, ¿Qué mejoras podría realizar en las tablas?
 
+Considero que se debería tener una tabla de localidades para asignarlas a la tabla de departamento, para
+evitar la redundancia de ingresarlas nuevamente, además de que se puede prestar para ingresarlas de distintas formas,
+así asignando un ID de la localidad al departamento.
+
+Movería la columna de jefe_id a una tabla de jefe_empleado para evitar tener potencialmente columnas nulas dentro de la tabla empleado
+teniendo la tabla de jefe_empleado con los campos de idEmpleado, idJefe siendo ambas llaves foraneas hacia empleado pero con llave primaria en 
+ambas columnas para evitar que se coloque la misma persona como su propio jefe.
+
+Tendria una tabla cargo donde se tenga las columnas del nombre de cargo, más el departamento al que pertenece ya que esa información va relacionada,
+también para evitar valores repetidos dentro de la tabla empleado por el mismo cargo.
+
+La tabla empleado quedaría como
+
+CREATE TABLE EMPLEADO(
+    ID INT NOT NULL,
+    NOMBRE VARCHAR(30),
+    APELLIDOS VARCHAR(60),
+    TELEFONO VARCHAR(25),
+    EMAIL VARCHAR(50),
+    ID_CARGO INT,
+    FECHA_ALTA DATE,
+    SUELDO DECIMAL(9,2),
+    COMISION DECIMAL(9,2),
+    PRIMARY KEY(ID),
+    FOREIGN KEY (ID_CARGO)
+)
+Nota: Empleado Mantiene los tipos de dato ya definidos para las tablas que no cambiaron y sus restricciones correspondientes definidas
+anteriromente, solo es para mostrar el resultado final.
 
 2. ¿Qué registro de empleado falla y por qué? ¿Cómo se corrige?
 Para empleado fallan los registros con email fsanches!@gmail.com y fsanchez!@gmail.com, ya que contienen un signo de exclamación !,
